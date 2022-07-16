@@ -1,0 +1,300 @@
+@charset "UTF-8";
+/*Index/html*/
+/*Index/html*/
+/*Lapalettedugout/html*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__Logo {
+  width: 40%;
+  height: 65%;
+}
+
+#Localisation {
+  background: #bebaba;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Localisation p {
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+#Réservez {
+  background: #ececec;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  text-align: center;
+  gap: 10px;
+}
+
+#Réservez p:nth-child(1) {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+#Réservez p:nth-child(2) {
+  font-weight: 100;
+}
+
+.btn {
+  height: 30px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: white;
+  border: solid 1px;
+  border-style: none;
+  border-radius: 20px;
+  padding: 20px 10px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+#Fonctionnement span, #Restaurants span {
+  font-weight: 900;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+#Fonctionnement, #Restaurants {
+  padding-top: 30px;
+}
+
+.Fonctionnement__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+.Fonctionnement__step--number {
+  position: absolute;
+  left: -10px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  padding: 2px 6px 2px 6px;
+  color: white;
+}
+
+.Choisir {
+  background: #ececec;
+  border: solid 1 px black;
+  border-radius: 20px;
+  width: 90%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 14px;
+}
+
+.Composer {
+  background: #ececec;
+  border: solid 1 px black;
+  border-radius: 20px;
+  width: 90%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 14px;
+}
+
+.Deguster {
+  background: #ececec;
+  border: solid 1 px black;
+  border-radius: 20px;
+  width: 90%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 14px;
+}
+
+.fa-mobile-screen-button, .fa-list-ul, .fa-store {
+  color: grey;
+  position: absolute;
+  left: 30px;
+}
+
+#Restaurants {
+  background-color: #ececec;
+  margin-top: 40px;
+}
+
+.Restaurants-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.Card-1 i:hover, .Card-2 i:hover, .Card-3 i:hover, .Card-4 i:hover {
+  color: #9356DC;
+  font-weight: bold;
+}
+
+.Card-1, .Card-2, .Card-3, .Card-4 {
+  width: 90%;
+  height: 210px;
+  border: solid 1px;
+  border-style: none;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.Card-1:hover, .Card-2:hover, .Card-3:hover, .Card-4:hover {
+  opacity: 0.8;
+}
+
+.Card-1 img, .Card-2 img, .Card-3 img, .Card-4 img {
+  width: 100%;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.Card-1 i, .Card-2 i, .Card-3 i, .Card-4 i {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 20px;
+}
+
+.nom {
+  font-weight: 900;
+}
+
+.sous-nom {
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  background: #484848;
+  color: white;
+  width: 100%;
+}
+
+.footer-h5 {
+  font-family: "Shrikhand", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
+footer li {
+  list-style: none;
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+
+footer ul {
+  padding-bottom: 10px;
+}
+/*# sourceMappingURL=main.css.map */
