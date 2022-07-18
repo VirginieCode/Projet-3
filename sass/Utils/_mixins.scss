@@ -22,6 +22,17 @@ margin: 0;
 font-family: $font-shrikhand;
 }
 
+@mixin Coeur
+{
+    font-size: 22px;
+}
+
+@mixin Coeur-hover
+{
+color:  #9356DC;
+font-weight: bold;
+}
+
 @mixin Header 
 {
 height: 60px ;
@@ -72,6 +83,13 @@ gap: 10px;
 opacity: 0.9;
 }
 
+@mixin Fonctionnement__Titre
+{
+    font-weight: 900;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
 @mixin Fonctionnement__step
 {
    display: flex;
@@ -118,6 +136,14 @@ position: relative;
   background-color:rgb(236, 236, 236) ;  
   margin-top: 40px;
 }
+
+@mixin Restaurants__Titre
+{
+    font-weight: 900;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
 @mixin Restaurants-container
 {
  display: flex;
@@ -146,13 +172,31 @@ position: relative;
 	border-radius: 10px 10px 0 0;
 }
 
-@mixin fa-heart 
+@mixin Card__fa-heart 
 {
     position: absolute;
     right: 20px;
     bottom: 20px;
     font-size: 20px;
     
+}
+
+@mixin Nouveau
+{
+    
+    height: 20px;
+    background: #99E2D0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: solid 1px;
+    border-radius: 3px;
+    border-style: none;
+    color: #288925;
+    text-align: center;
+    padding: 5px;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 @mixin Footer 
@@ -185,41 +229,76 @@ position: relative;
 @mixin background-fond
  {
     background: rgb(214, 211, 211);
-    width: 100%;
     border: solid 1px;
     border-style: none;
-    border-radius: 30px 30px 0px 0px;
-    position: relative;
-    top: -30px;
+    transform: scaleY(1.1);
+    padding-bottom: 20px;
+    margin-bottom: 45px;
+
 }
 
-@mixin Div-Entrées-Plats-Desserts
+@mixin Sous-titres
 {
-    width: 90%;
-    height: 60px;
-    border: solid 1px;
-    border-radius: 10px;
-    background: white;
+    font-weight: 100;
 }
 
-@mixin Container-entrées-plats-desserts
+@mixin span
+{
+    border-bottom: 3px solid #99E2D0;
+}
+
+@mixin Entrées-Plats-Dessert
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0px 20px 0px;
+   
 }
 
-@mixin Titredumenu
+
+@mixin Entrée-Plat-Dessert__box
 {
+    width: 90%;
+    height: 60px;
+    margin-bottom: 10px;
+    border: solid 1px;
+    border-radius: 10px;
+    background: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
+
+   
+
 }
+
+@mixin ButtonCommander-container
+{
+display: flex;
+justify-content: center;
+}
+
 
 @mixin prix 
 {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 10px;
+
 }
 
+@mixin AjoutPanier
+{
+    background: #99E2D0;
+    width: 70px;
+    height: 60px;
+    border-radius: 0px 10px 10px 0px ;
+    border: solid 1px;
+    border-style: none;
+}
+
+@mixin AjoutPanier--Logo
+{
+    padding-left: 25px;
+    padding-top: 20px;
+    font-size: 20px;
+}

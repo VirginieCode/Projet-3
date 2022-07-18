@@ -5,6 +5,7 @@
 * {
   padding: 0;
   margin: 0;
+  /*border: solid black 2px;*/
 }
 
 p {
@@ -103,14 +104,14 @@ header {
   opacity: 0.9;
 }
 
-#Fonctionnement span, #Restaurants span {
+#Fonctionnement, #Restaurants {
+  padding-top: 30px;
+}
+
+.Fonctionnement__Titre {
   font-weight: 900;
   font-size: 20px;
   padding-left: 15px;
-}
-
-#Fonctionnement, #Restaurants {
-  padding-top: 30px;
 }
 
 .Fonctionnement__step {
@@ -199,6 +200,10 @@ header {
   font-size: 14px;
 }
 
+.Deguster i {
+  color: #9356DC;
+}
+
 .fa-mobile-screen-button, .fa-list-ul, .fa-store {
   color: grey;
   position: absolute;
@@ -208,6 +213,12 @@ header {
 #Restaurants {
   background-color: #ececec;
   margin-top: 40px;
+}
+
+.Restaurants__Titre {
+  font-weight: 900;
+  font-size: 20px;
+  padding-left: 15px;
 }
 
 .Restaurants-container {
@@ -241,10 +252,6 @@ header {
   position: relative;
 }
 
-.Card-1:hover, .Card-2:hover, .Card-3:hover, .Card-4:hover {
-  opacity: 0.8;
-}
-
 .Card-1 img, .Card-2 img, .Card-3 img, .Card-4 img {
   width: 100%;
   height: 140px;
@@ -260,6 +267,11 @@ header {
   font-size: 20px;
 }
 
+.Card-1 i:hover, .Card-2 i:hover, .Card-3 i:hover, .Card-4 i:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
 .nom {
   font-weight: 900;
 }
@@ -271,6 +283,22 @@ header {
 a {
   text-decoration: none;
   color: black;
+}
+
+.Nouveau {
+  height: 20px;
+  background: #99E2D0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: solid 1px;
+  border-radius: 3px;
+  border-style: none;
+  color: #288925;
+  text-align: center;
+  padding: 5px;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 footer {
@@ -297,4 +325,315 @@ footer li {
 footer ul {
   padding-bottom: 10px;
 }
+
+/*Media Queries : page d'acceuil*/
+@media only screen and (min-width: 768px) {
+  .Restaurants-container {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 0;
+  }
+  #Restaurants {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .Fonctionnement__step {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 20px;
+  }
+  .Choisir, .Composer, .Deguster {
+    margin-right: 10px;
+  }
+  .Card-1, .Card-2, .Card-3, .Card-4 {
+    margin-right: 10px;
+  }
+  .Footer {
+    text-align: center;
+  }
+}
+
+/*Palettedugout/html*/
+.fa-arrow-left {
+  position: relative;
+  right: 70px;
+}
+
+.background-image {
+  width: 100%;
+  display: block;
+}
+
+.background-fond {
+  background: #d6d3d3;
+  border: solid 1px;
+  border-style: none;
+  -webkit-transform: scaleY(1.1);
+          transform: scaleY(1.1);
+  padding-bottom: 20px;
+  margin-bottom: 45px;
+}
+
+.TitredumenuetCoeur {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.TitredumenuetCoeur i {
+  font-size: 22px;
+}
+
+.TitredumenuetCoeur i:hover {
+  color: #9356DC;
+  font-weight: bold;
+}
+
+.Sous-titres {
+  font-weight: 100;
+}
+
+.Sous-titres span {
+  border-bottom: 3px solid #99E2D0;
+}
+
+.Entrées, .Plats, .Desserts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px 20px 0px;
+}
+
+.Entrée__box--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Entrée__box, .Plat__box, .Dessert__box {
+  width: 90%;
+  height: 60px;
+  margin-bottom: 10px;
+  border: solid 1px;
+  border-radius: 10px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-animation: bottomslide 2s;
+          animation: bottomslide 2s;
+  overflow: hidden;
+}
+
+@-webkit-keyframes bottomslide {
+  from {
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomslide {
+  from {
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.prix p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.AjoutPanier {
+  background: #99E2D0;
+  width: 70px;
+  height: 60px;
+  border-radius: 0px 10px 10px 0px;
+  border: solid 1px;
+  border-style: none;
+  width: 0;
+}
+
+.Entrée__box:hover .AjoutPanier, .Plat__box:hover .AjoutPanier, .Dessert__box:hover .AjoutPanier {
+  -webkit-animation: leftslide 2s;
+          animation: leftslide 2s;
+}
+
+@-webkit-keyframes leftslide {
+  from {
+    -webkit-transform: translatex(70px);
+            transform: translatex(70px);
+    width: 0px;
+  }
+  to {
+    -webkit-transform: translatex(0);
+            transform: translatex(0);
+    width: 70px;
+  }
+}
+
+@keyframes leftslide {
+  from {
+    -webkit-transform: translatex(70px);
+            transform: translatex(70px);
+    width: 0px;
+  }
+  to {
+    -webkit-transform: translatex(0);
+            transform: translatex(0);
+    width: 70px;
+  }
+}
+
+.fa-circle-check {
+  padding-left: 25px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.ButtonCommander-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ButtonCommander {
+  height: 30px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: white;
+  border: solid 1px;
+  border-style: none;
+  border-radius: 20px;
+  padding: 20px 10px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+}
+
+.ButtonCommander:hover {
+  opacity: 0.9;
+}
+
+/*
+.AjoutPanier
+{
+    background: #99E2D0;
+    width: 70px;
+    height: 60px;
+    padding-right: 0;
+    border-radius: 0px 10px 10px 0px ;
+    border: solid 1px;
+    border-style: none;
+    transform: scaleX(0);
+ 
+    
+    transform-origin: 100% 0%;
+   
+    transition: transform 1s; 
+
+
+}
+
+@keyframes done
+{ 
+from {
+    transform: translatex(100px);
+}
+
+to {
+    transform: translatex(70px);
+}
+}
+
+
+.fa-circle-check
+{
+    padding-left: 25px;
+    padding-top: 20px;
+    font-size: 20px;
+    display: block;
+   /* transition: transform 1s ease-in-out;
+}
+
+.Entrée__box:hover .AjoutPanier, .Plat__box:hover .AjoutPanier, .Dessert__box:hover .AjoutPanier
+{
+    animation: done 2s;
+    
+    transform: scale(1);
+    
+}
+
+
+
+
+
+
+
+.Sous-titres:after 
+{
+    display:block;
+    content: '';
+    border-bottom: solid 3px #019fb6;  
+    transform: scaleX(.5);  
+    width: 400px;
+}
+*/
 /*# sourceMappingURL=main.css.map */

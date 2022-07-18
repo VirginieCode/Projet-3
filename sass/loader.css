@@ -2,8 +2,8 @@
 /*Lapalettedugout/html*/
 body {
   font-family: "Roboto", sans-serif;
-  background: #ffffff;
-} 
+  background: white;
+}
 
 .container {
   position: relative;
@@ -28,6 +28,13 @@ body {
   height: 100%;
   text-align: center;
   line-height: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+
+.Sous-Texte {
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;

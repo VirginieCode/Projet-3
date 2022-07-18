@@ -8,6 +8,7 @@
 *
 {
 @include General;
+/*border: solid black 2px;*/
 
 }
 
@@ -66,16 +67,14 @@ header
    @include Button-hover
 }
 
-#Fonctionnement span, #Restaurants span
-{
-    font-weight: 900;
-    font-size: 20px;
-    padding-left: 15px;
-}
-
 #Fonctionnement, #Restaurants 
 {
     padding-top: 30px;
+}
+
+.Fonctionnement__Titre
+{
+    @include Fonctionnement__Titre;
 }
 
 .Fonctionnement__step
@@ -104,6 +103,11 @@ header
     font-size: 14px;
 }
 
+.Deguster i
+{
+    color: #9356DC;
+}
+
 
 .fa-mobile-screen-button, .fa-list-ul, .fa-store
 {
@@ -115,6 +119,11 @@ header
     @include Restaurants-Section;
 }
 
+.Restaurants__Titre
+{
+    @include Restaurants__Titre;
+}
+
 .Restaurants-container
 {
 @include Restaurants-container;
@@ -123,8 +132,7 @@ padding-top: 15px;
 
 .Card-1 i:hover, .Card-2 i:hover, .Card-3 i:hover, .Card-4 i:hover
 {
-color:  #9356DC;
-font-weight: bold;
+@include Coeur-hover;
 }
 
 .Card-1, .Card-2, .Card-3, .Card-4
@@ -133,10 +141,6 @@ font-weight: bold;
     
 }
 
-.Card-1:hover, .Card-2:hover, .Card-3:hover, .Card-4:hover
-{
-    opacity: 0.8;
-}
 
 .Card-1 img, .Card-2 img, .Card-3 img, .Card-4 img 
 {
@@ -145,9 +149,13 @@ font-weight: bold;
 
 .Card-1 i, .Card-2 i, .Card-3 i, .Card-4 i
 {
-    @include fa-heart;
+    @include Card__fa-heart;
 }
 
+.Card-1 i:hover, .Card-2 i:hover, .Card-3 i:hover, .Card-4 i:hover
+{
+    cursor: grab;
+}
 .nom
 {
     font-weight: 900;
@@ -161,6 +169,12 @@ font-weight: bold;
 {
   @include Lien-a;
 }
+
+.Nouveau
+{
+    @include Nouveau;
+}
+
 footer
 {
     @include Footer;
@@ -183,3 +197,251 @@ footer ul
     padding-bottom: 10px;
 }
 
+/*Media Queries : page d'acceuil*/
+
+@media only screen and (min-width: 768px) 
+{
+    .Restaurants-container
+    {
+        flex-direction: initial;
+        justify-content: center;
+       gap: 0;
+        
+    }
+
+    #Restaurants
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .Fonctionnement__step
+    {
+        flex-direction: initial;
+        justify-content: center;
+        margin: 20px;
+    }
+    .Choisir, .Composer, .Deguster
+    {
+        margin-right: 10px;
+    }
+
+    .Card-1, .Card-2, .Card-3, .Card-4
+    {
+        margin-right: 10px;
+    }
+
+    .Footer 
+    {
+text-align: center;
+    }
+} 
+
+
+
+
+
+/*Palettedugout/html*/
+
+.fa-arrow-left
+{
+   position: relative;
+   right : 70px;
+ 
+
+}
+.background-image
+{
+    @include background-image;
+}
+
+.background-fond
+{
+    @include background-fond;
+}
+
+.TitredumenuetCoeur
+{
+    @include font-Shrikhand;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.TitredumenuetCoeur i
+{
+@include Coeur;
+}
+
+.TitredumenuetCoeur i:hover
+{
+    @include Coeur-hover;
+}
+
+.Sous-titres
+{
+    @include Sous-titres;
+   
+}
+
+.Sous-titres span
+{
+    @include span;
+}
+
+.Entrées, .Plats, .Desserts
+{
+@include Entrées-Plats-Dessert;
+
+}
+
+.Entrée__box--container
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Entrée__box, .Plat__box, .Dessert__box
+{
+    @include Entrée-Plat-Dessert__box;
+    animation: bottomslide 2s;
+    overflow: hidden;
+   
+}
+
+@keyframes bottomslide
+{ 
+from {
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+to {
+    transform: translateY(0);
+    opacity: 1;
+}
+}
+
+
+.prix p:nth-child(1)
+{
+font-size: 14px;
+font-weight: 100;
+}
+
+.AjoutPanier
+{
+    @include AjoutPanier;
+    width: 0;
+}
+
+
+.Entrée__box:hover .AjoutPanier, .Plat__box:hover .AjoutPanier, .Dessert__box:hover .AjoutPanier
+{
+    animation: leftslide 2s;
+    
+}
+
+@keyframes leftslide
+{ 
+from {
+    transform: translatex(70px);
+    width: 0px;
+}
+
+to {
+    transform: translatex(0);
+    width: 70px;
+}
+}
+
+.fa-circle-check
+{
+    @include AjoutPanier--Logo;
+}
+
+.ButtonCommander-container
+{
+@include ButtonCommander-container;
+}
+
+.ButtonCommander
+{
+    @include Button;
+    width: 40%;
+
+}
+
+.ButtonCommander:hover
+{
+    @include Button-hover
+}
+
+
+
+/*
+.AjoutPanier
+{
+    background: #99E2D0;
+    width: 70px;
+    height: 60px;
+    padding-right: 0;
+    border-radius: 0px 10px 10px 0px ;
+    border: solid 1px;
+    border-style: none;
+    transform: scaleX(0);
+ 
+    
+    transform-origin: 100% 0%;
+   
+    transition: transform 1s; 
+
+
+}
+
+@keyframes done
+{ 
+from {
+    transform: translatex(100px);
+}
+
+to {
+    transform: translatex(70px);
+}
+}
+
+
+.fa-circle-check
+{
+    padding-left: 25px;
+    padding-top: 20px;
+    font-size: 20px;
+    display: block;
+   /* transition: transform 1s ease-in-out;
+}
+
+.Entrée__box:hover .AjoutPanier, .Plat__box:hover .AjoutPanier, .Dessert__box:hover .AjoutPanier
+{
+    animation: done 2s;
+    
+    transform: scale(1);
+    
+}
+
+
+
+
+
+
+
+.Sous-titres:after 
+{
+    display:block;
+    content: '';
+    border-bottom: solid 3px #019fb6;  
+    transform: scaleX(.5);  
+    width: 400px;
+}
+*/
