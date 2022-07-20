@@ -267,6 +267,7 @@ text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 30px;
    
 }
 
@@ -286,9 +287,22 @@ text-align: center;
    
 }
 
+
+.Sous-titre-Entrées span
+{
+    @include span;
+}
+
 .Sous-titres span
 {
     @include span;
+    margin-left: 20px;
+}
+
+.Sous-titre-Entrées
+{
+    margin-top: 30px;
+    margin-left: 20px;
 }
 
 .Entrées, .Plats, .Desserts
@@ -297,20 +311,65 @@ text-align: center;
 
 }
 
+
 .Entrée__box--container
 {
     display: flex;
     justify-content: space-between;
 }
 
-.Entrée__box, .Plat__box, .Dessert__box
+.Entrée__box--1, .Entrée__box--2, .Entrée__box--3, .Plat__box--1, .Plat__box--2, .Plat__box--3, .Dessert__box--1, .Dessert__box--2, .Dessert__box--3
 {
     @include Entrée-Plat-Dessert__box;
     animation: bottomslide 2s;
-    overflow: hidden;
    
 }
 
+.Entrée__box1
+{
+    width: 75%;
+    
+}
+
+
+.Entrée__box--1:hover .sous-nom, .Entrée__box--2:hover .sous-nom, .Entrée__box--3:hover .sous-nom, .Plat__box--1:hover .sous-nom, .Plat__box--2:hover .sous-nom, .Plat__box--3:hover .sous-nom, .Dessert__box--1:hover .sous-nom, .Dessert__box--2:hover .sous-nom, .Dessert__box--3:hover .sous-nom
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+.sous-nom
+{
+    white-space: nowrap;
+    font-size: 13.5px;
+    padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+
+.nom
+{
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.Entrée__box1-bis
+{
+    margin-top: 20px;
+}
+
+.prix
+{
+    font-size: 15px;
+    font-weight: 500;
+}
 @keyframes bottomslide
 { 
 from {
@@ -324,13 +383,6 @@ to {
 }
 }
 
-
-.prix p:nth-child(1)
-{
-font-size: 14px;
-font-weight: 100;
-}
-
 .AjoutPanier
 {
     @include AjoutPanier;
@@ -338,29 +390,52 @@ font-weight: 100;
 }
 
 
-.Entrée__box:hover .AjoutPanier, .Plat__box:hover .AjoutPanier, .Dessert__box:hover .AjoutPanier
+.Entrée__box--1:hover .AjoutPanier, .Entrée__box--2:hover .AjoutPanier, .Entrée__box--3:hover .AjoutPanier, .Plat__box--1:hover .AjoutPanier, .Plat__box--2:hover .AjoutPanier, .Plat__box--3:hover .AjoutPanier,  .Dessert__box--1:hover .AjoutPanier, .Dessert__box--2:hover .AjoutPanier, .Dessert__box--3:hover .AjoutPanier
 {
-    animation: leftslide 2s;
+    animation: leftslide 3s;
     
 }
 
 @keyframes leftslide
 { 
-from {
+0% {
     transform: translatex(70px);
     width: 0px;
 }
 
-to {
+50% {
     transform: translatex(0);
     width: 70px;
 }
+
+100% {
+    transform: translatex(70px);
+    width: 0px;
+}
 }
 
-.fa-circle-check
+
+
+ .fa-circle-check
 {
     @include AjoutPanier--Logo;
+    
 }
+
+.Entrée__box--1:hover .fa-circle-check, .Entrée__box--2:hover .fa-circle-check, .Entrée__box--3:hover .fa-circle-check, .Plat__box--1:hover .fa-circle-check, .Plat__box--2:hover .fa-circle-check, .Plat__box--3:hover .fa-circle-check,  .Dessert__box--1:hover .fa-circle-check, .Dessert__box--2:hover .fa-circle-check, .Dessert__box--3:hover .fa-circle-check
+{
+    animation: Rotation 2s;
+}
+
+@keyframes Rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 
 .ButtonCommander-container
 {
@@ -381,67 +456,3 @@ to {
 
 
 
-/*
-.AjoutPanier
-{
-    background: #99E2D0;
-    width: 70px;
-    height: 60px;
-    padding-right: 0;
-    border-radius: 0px 10px 10px 0px ;
-    border: solid 1px;
-    border-style: none;
-    transform: scaleX(0);
- 
-    
-    transform-origin: 100% 0%;
-   
-    transition: transform 1s; 
-
-
-}
-
-@keyframes done
-{ 
-from {
-    transform: translatex(100px);
-}
-
-to {
-    transform: translatex(70px);
-}
-}
-
-
-.fa-circle-check
-{
-    padding-left: 25px;
-    padding-top: 20px;
-    font-size: 20px;
-    display: block;
-   /* transition: transform 1s ease-in-out;
-}
-
-.Entrée__box:hover .AjoutPanier, .Plat__box:hover .AjoutPanier, .Dessert__box:hover .AjoutPanier
-{
-    animation: done 2s;
-    
-    transform: scale(1);
-    
-}
-
-
-
-
-
-
-
-.Sous-titres:after 
-{
-    display:block;
-    content: '';
-    border-bottom: solid 3px #019fb6;  
-    transform: scaleX(.5);  
-    width: 400px;
-}
-*/

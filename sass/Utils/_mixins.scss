@@ -228,9 +228,10 @@ position: relative;
 
 @mixin background-fond
  {
-    background: rgb(214, 211, 211);
+    background: #f0efef;
     border: solid 1px;
     border-style: none;
+    border-radius: 50px 50px 0 0;
     transform: scaleY(1.1);
     padding-bottom: 20px;
     margin-bottom: 45px;
@@ -262,13 +263,14 @@ position: relative;
     width: 90%;
     height: 60px;
     margin-bottom: 10px;
-    border: solid 1px;
+    /*border: solid 1px;*/
     border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #E8E8E8;;
     background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: center;
+    overflow: hidden;
 
    
 
@@ -281,10 +283,6 @@ justify-content: center;
 }
 
 
-@mixin prix 
-{
-
-}
 
 @mixin AjoutPanier
 {
@@ -298,7 +296,11 @@ justify-content: center;
 
 @mixin AjoutPanier--Logo
 {
-    padding-left: 25px;
-    padding-top: 20px;
+    
     font-size: 20px;
+    color: white;
+    position: relative;
+    left: 25px;
+    top: 20px;
+
 }
