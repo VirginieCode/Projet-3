@@ -9,8 +9,62 @@
 {
 @include General;
 /*border: solid black 2px;*/
-
 }
+
+/*LOADER
+
+.container
+{
+    position: fixed;
+    z-index: 9999; 
+    top : 0px; 
+    left : 0px; 
+    height : 100%; 
+    width : 100%; 
+    background-color: white; 
+    animation: loader 3sec both;
+}
+
+@keyframes loader
+{
+    0% {opacity: 0%;}
+    10% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+    
+
+.Rond 
+{
+    
+    position: relative;
+    left: 220px;
+    width: 200px;
+    height: 200px;
+    border-left: 4px solid black;
+    border-radius: 50%;
+    animation: Rotation 1s linear infinite;
+}
+
+.Texte
+{
+    position: relative;
+    top: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@keyframes Rotation 
+{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+*/
+/*..............*/
 
 p
 {
@@ -201,6 +255,13 @@ footer ul
 
 @media only screen and (min-width: 768px) 
 {
+
+    header 
+    {
+        height: 80px;
+    }
+    
+
     .Restaurants-container
     {
         flex-direction: initial;
@@ -221,12 +282,22 @@ footer ul
         justify-content: center;
         margin: 20px;
     }
+
+    .Fonctionnement__step i 
+    {
+        left: 20px;
+    }
+
+    .Fonctionnement__Titre
+    {
+        text-align: center;
+    }
     .Choisir, .Composer, .Deguster
     {
         margin-right: 10px;
     }
 
-    .Card-1, .Card-2, .Card-3, .Card-4
+    .Card-1, .Card-2, .Card-3
     {
         margin-right: 10px;
     }
@@ -238,7 +309,13 @@ text-align: center;
 } 
 
 
-
+@media only screen and (min-width: 992px) 
+{
+    header 
+    {
+        height: 100px;
+    }
+}
 
 
 /*Palettedugout/html*/
@@ -281,11 +358,20 @@ text-align: center;
     @include Coeur-hover;
 }
 
+.Container-menu
+{
+    display: flex;
+    flex-direction: column;
+
+}
+
 .Sous-titres
 {
     @include Sous-titres;
    
 }
+
+
 
 
 .Sous-titre-Entrées span
@@ -296,14 +382,31 @@ text-align: center;
 .Sous-titres span
 {
     @include span;
-    margin-left: 20px;
+    
 }
 
 .Sous-titre-Entrées
 {
     margin-top: 30px;
     margin-left: 20px;
+    
+    margin-bottom: 15px;
+    font-weight: 100;
 }
+
+.Sous-titres-Desserts
+{
+    margin-top: 30px;
+    margin-left: 20px;
+   
+    margin-bottom: 15px;
+    font-weight: 100;
+}
+.Sous-titres-Desserts span
+{
+    @include span;
+}
+
 
 .Entrées, .Plats, .Desserts
 {
@@ -325,7 +428,7 @@ text-align: center;
    
 }
 
-.Entrée__box1
+.Entrée__box1, .Plat__box1, .Dessert__box1
 {
     width: 75%;
     
@@ -451,8 +554,126 @@ to {
 
 .ButtonCommander:hover
 {
-    @include Button-hover
+    @include Button-hover;
+    cursor: grab;
+}
+
+/*Media Queries : Palette du gout*/
+
+@media only screen and (min-width: 768px) 
+{
+
+header i 
+{
+    font-size: 20px;
+}
+
+.TitredumenuetCoeur
+{
+    justify-content: center;
+}
+
+.TitredumenuetCoeur h1
+{
+    margin-right: 50px;
+}
+
+.Entrée__box--1,.Entrée__box--2, .Entrée__box--3, .Plat__box--1, .Plat__box--2, .Plat__box--3, .Dessert__box--1, .Dessert__box--2, .Dessert__box--3
+{
+height: 100px;
+}
+
+.Sous-titre-Entrées, .Sous-titres
+{
+    text-align: center;
+}
+
+.AjoutPanier
+{
+    height: 100px;
+}
+
+@keyframes leftslide
+{ 
+0% {
+    transform: translatex(70px);
+    width: 0px;
+}
+
+50% {
+    transform: translatex(0);
+    width: 110px;
+}
+
+100% {
+    transform: translatex(70px);
+    width: 0px;
+}
+}
+
+.fa-circle-check
+{
+    left: 45px;
+    top: 40px;
+    
+}
+
+footer 
+{
+margin-top: 60px;
+
+}
+
+.ButtonCommander-container
+{
+    margin-top: 40px;
+}
+
+.ButtonCommander
+{
+    height: 60px;
+}
+
+footer
+{
+    text-align: center;
+    padding-top:10px;
+}
+
+}
+
+@media only screen and (min-width: 992px) 
+{
+
+    header i 
+    {
+        font-size: 30px;
+    }
+
+.TitredumenuetCoeur h1
+{
+ margin-right: 90px;
+}
+    
+
+.Container-menu
+{
+flex-direction: initial;
+justify-content: space-around;
+align-items: flex-end;
+}
+
+.Entrées, .Plats, .Desserts
+{
+    width: 90%;
+}
+
+.Entrée__box1, .Plat__box1, .Dessert__box1
+{
+    width: 50%;
 }
 
 
+
+}
 

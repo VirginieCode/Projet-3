@@ -235,12 +235,15 @@ position: relative;
     transform: scaleY(1.1);
     padding-bottom: 20px;
     margin-bottom: 45px;
+    width: 100%;
 
 }
 
 @mixin Sous-titres
 {
     font-weight: 100;
+   
+    margin-bottom: 15px;
 }
 
 @mixin span
