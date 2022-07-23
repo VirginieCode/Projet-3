@@ -5,13 +5,8 @@
 
 @import "Utils/Variables";
 
-*
-{
-@include General;
-/*border: solid black 2px;*/
-}
 
-/*LOADER
+
 
 .container
 {
@@ -19,17 +14,20 @@
     z-index: 9999; 
     top : 0px; 
     left : 0px; 
-    height : 100%; 
-    width : 100%; 
+    height : 100vh; 
+    width : 100vw; 
     background-color: white; 
-    animation: loader 3sec both;
+    animation: loader 3s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes loader
 {
-    0% {opacity: 0%;}
-    10% {opacity: 100%;}
-    100% {opacity: 0%;}
+    0% {opacity: 100%;}
+    80% {opacity: 100%;}
+    100% {opacity: 0%; visibility: hidden;}
 }
     
 
@@ -37,23 +35,26 @@
 {
     
     position: relative;
-    left: 220px;
+    
     width: 200px;
     height: 200px;
-    border-left: 4px solid black;
+    border-left: 4px solid #9356DC;
     border-radius: 50%;
     animation: Rotation 1s linear infinite;
 }
 
 .Texte
 {
-    position: relative;
-    top: 200px;
+    position: absolute;
+    font-family:  $font-shrikhand;
     text-align: center;
-    line-height: 200px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
+    
 }
 
 @keyframes Rotation 
@@ -63,62 +64,80 @@
 }
 
 
-*/
 /*..............*/
 
-p
+*
 {
-    @include font-roboto;
+    padding: 0;
+    margin: 0;
+}
+
+p, h1
+{
+    font-family: $font-roboto;
 }
 
 header
 {
     @include Header;
-}
 
-.header__Logo
-{
-    width: 40%;
-    height: 65%;
+    & img{
+        width: 40%;
+        height: 65%;
+    }
+    @media (min-width: 768px) {
+        height: 80px;
+         }
+
+         @media (min-width: 992px) {
+            height: 100px;
+             }
 }
 
 #Localisation
 {
-@include Localisation;
+    background: rgb(190, 186, 186);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        padding-left: 10px;
+        font-size: 15px;
+    }
 }
 
-#Localisation p
-{
-    padding-left: 10px;
-    font-size: 15px;
-}
 
-#Réservez
+#Introduction
 {
-@include Réservez;
-
-}
-
-#Réservez p:nth-child(1)
-{
-    font-weight: 900;
+background: rgb(236, 236, 236);
+height: 200px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+align-content: space-between;
+text-align: center;
+gap: 10px;
+h1{
+   
+        font-weight: 900;
     font-size: 20px;
-}
+    }
 
-#Réservez p:nth-child(2)
-{
-    font-weight: 100;
-    
+    p{
+        font-weight: 100;
+    }
 }
 
 .btn
 {
     @include Button;
-}
 
-.btn:hover
-{
-   @include Button-hover
+    &:hover{
+        opacity: 0.9;
+    }
 }
 
 #Fonctionnement, #Restaurants 
@@ -128,88 +147,153 @@ header
 
 .Fonctionnement__Titre
 {
-    @include Fonctionnement__Titre;
+    font-weight: 900;
+    font-size: 20px;
+    padding-left: 15px;
+
+    @media (min-width: 768px) {
+        text-align: center;
+         }
 }
 
-.Fonctionnement__step
+.Fonctionnement__container
 {
-    @include Fonctionnement__step;
-}
-.Fonctionnement__step--number
-{
-   @include Fonctionnement__step--number 
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   align-content: space-around;
+   gap: 10px;
+   padding-top: 15px ;
+
+    &--number{
+        position: absolute;
+    left: -10px;
+    background-color: #9356DC;
+    border-radius: 50%;
+    padding: 2px 6px 2px 6px;
+    color: white;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: initial;
+        justify-content: center;
+        margin: 20px;
+         }
 }
 
-.Choisir
+.Fonctionnement__container i
 {
-    @include Fonctionnement__Box;
-    font-size: 14px;
-}
-.Composer
-{
-    @include Fonctionnement__Box;
-    font-size: 14px;
+    @media (min-width: 768px) {
+        left: 20px;
+         }
 }
 
-.Deguster
+.Box
 {
-    @include Fonctionnement__Box;
-    font-size: 14px;
+background: rgb(236, 236, 236);
+border: solid 1 px black;
+border-radius: 20px;
+width: 90%;
+height: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+font-size: 14px;
+
+@media (min-width: 768px) {
+    margin-right: 10px;
+     }
 }
 
-.Deguster i
+.Fonctionnement__container div:nth-child(3) i
 {
-    color: #9356DC;
+color: #9356DC;
 }
 
 
 .fa-mobile-screen-button, .fa-list-ul, .fa-store
 {
-    @include Fonctionnement__Box--fa-solid
+    color: grey;
+    position: absolute;
+    left: 30px;
 }
 
 #Restaurants
 {
-    @include Restaurants-Section;
-}
+    background-color:rgb(236, 236, 236) ;  
+    margin-top: 40px;
 
-.Restaurants__Titre
-{
-    @include Restaurants__Titre;
-}
-
-.Restaurants-container
-{
-@include Restaurants-container;
-padding-top: 15px;
-}
-
-.Card-1 i:hover, .Card-2 i:hover, .Card-3 i:hover, .Card-4 i:hover
-{
-@include Coeur-hover;
-}
-
-.Card-1, .Card-2, .Card-3, .Card-4
-{
-    @include Restaurants__Card 
+    @media (min-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+         }
     
 }
 
 
-.Card-1 img, .Card-2 img, .Card-3 img, .Card-4 img 
+
+.Restaurants__Titre
 {
-@include Restaurants__Card--img
+    font-weight: 900;
+    font-size: 20px;
+    padding-left: 15px;
 }
 
-.Card-1 i, .Card-2 i, .Card-3 i, .Card-4 i
+.Restaurants-container
 {
-    @include Card__fa-heart;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    @media (min-width: 768px) {
+        flex-direction: initial;
+        justify-content: center;
+       gap: 0;
+         }
 }
 
-.Card-1 i:hover, .Card-2 i:hover, .Card-3 i:hover, .Card-4 i:hover
+.Card
 {
-    cursor: grab;
+    width: 90%;
+    height: 210px;
+    border: solid 1px;
+    border-style: none;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+
+    & i:hover{
+        color:  #9356DC;
+        font-weight: bold;
+    }
+
+    & img{
+     width: 100%;
+    height: 140px;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+    }
+
+    & i{
+     position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 20px;
+
+        &:hover
+    {
+        cursor: grab;
+    }
+    }
+    @media (min-width: 768px) {
+        margin-right: 10px;
+         }
 }
+
+
 .nom
 {
     font-weight: 900;
@@ -221,230 +305,233 @@ padding-top: 15px;
 }
  a
 {
-  @include Lien-a;
+    text-decoration: none;
+    color: black;
 }
 
 .Nouveau
 {
-    @include Nouveau;
+    height: 20px;
+    background: #99E2D0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: solid 1px;
+    border-radius: 3px;
+    border-style: none;
+    color: #288925;
+    text-align: center;
+    padding: 5px;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 footer
 {
-    @include Footer;
-}
-.footer-h5
-{
-    @include font-Shrikhand;
-     @include footer-h5;
-    
-}
-footer li 
-{
-    list-style: none;
-    padding-left: 15px;  
-    padding-bottom: 5px;
-}
+    background: rgb(72, 72, 72);
+    color: white;
+    width: 100%;
 
-footer ul
-{
+    & li{
+
+        list-style: none;
+        padding-left: 15px;  
+        padding-bottom: 5px;
+    }
+
+    & ul{
+        padding-bottom: 10px;
+    }
+
+    & h5{
+        font-family: $font-shrikhand;
+        font-weight: normal;
+    font-size: 15px;
+    padding-top: 10px;
     padding-bottom: 10px;
-}
-
-/*Media Queries : page d'acceuil*/
-
-@media only screen and (min-width: 768px) 
-{
-
-    header 
-    {
-        height: 80px;
-    }
-    
-
-    .Restaurants-container
-    {
-        flex-direction: initial;
-        justify-content: center;
-       gap: 0;
-        
+    padding-left: 15px;
     }
 
-    #Restaurants
-    {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .Fonctionnement__step
-    {
-        flex-direction: initial;
-        justify-content: center;
-        margin: 20px;
-    }
-
-    .Fonctionnement__step i 
-    {
-        left: 20px;
-    }
-
-    .Fonctionnement__Titre
-    {
+    @media (min-width: 768px) {
         text-align: center;
-    }
-    .Choisir, .Composer, .Deguster
-    {
-        margin-right: 10px;
-    }
+         }
 
-    .Card-1, .Card-2, .Card-3
-    {
-        margin-right: 10px;
-    }
-
-    .Footer 
-    {
-text-align: center;
-    }
-} 
-
-
-@media only screen and (min-width: 992px) 
-{
-    header 
-    {
-        height: 100px;
-    }
 }
+
+
+
 
 
 /*Palettedugout/html*/
 
-.fa-arrow-left
+
+
+#fleche
 {
    position: relative;
    right : 70px;
  
+   @media (min-width: 768px) {
+    font-size: 20px;
+   }
+
+   @media (min-width: 992px) {
+    font-size: 30px;
+   }
 
 }
 .background-image
 {
-    @include background-image;
+    width: 100%;
+    display: block
 }
 
 .background-fond
 {
-    @include background-fond;
+    background: #f0efef;
+    border: solid 1px;
+    border-style: none;
+    border-radius: 50px 50px 0 0;
+    transform: scaleY(1.1);
+    padding-bottom: 20px;
+    margin-bottom: 45px;
+    width: 100%;
 }
 
 .TitredumenuetCoeur
 {
-    @include font-Shrikhand;
     font-size: 12px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top: 30px;
-   
+    padding-bottom: 30px;
+
+    & i{
+        font-size: 22px;
+    }
+
+    & i:hover {
+    color:  #9356DC;
+    font-weight: bold;
+    }
+
+    @media (min-width: 768px){
+        justify-content: center;
+    }
+
+    & h1 {
+
+        font-family: $font-shrikhand;
+
+        @media (min-width: 768px){
+            margin-right: 50px;
+        }
+
+        @media (min-width: 992px){
+            margin-right: 90px;
+        }
+       
+    }
 }
 
-.TitredumenuetCoeur i
-{
-@include Coeur;
-}
 
-.TitredumenuetCoeur i:hover
-{
-    @include Coeur-hover;
-}
+
 
 .Container-menu
 {
     display: flex;
     flex-direction: column;
 
+    @media (min-width: 992px){
+        
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+       
+    }
 }
 
 .Sous-titres
 {
-    @include Sous-titres;
-   
-}
-
-
-
-
-.Sous-titre-Entrées span
-{
-    @include span;
-}
-
-.Sous-titres span
-{
-    @include span;
-    
-}
-
-.Sous-titre-Entrées
-{
-    margin-top: 30px;
-    margin-left: 20px;
-    
-    margin-bottom: 15px;
     font-weight: 100;
+    margin-bottom: 15px;
+    margin-left: 40px;
+
+    & span{
+        border-bottom: 3px solid #99E2D0;
+    }
+    @media (min-width: 768px){
+        text-align: center;
+    }
 }
 
-.Sous-titres-Desserts
-{
-    margin-top: 30px;
-    margin-left: 20px;
-   
-    margin-bottom: 15px;
-    font-weight: 100;
-}
-.Sous-titres-Desserts span
-{
-    @include span;
-}
 
 
 .Entrées, .Plats, .Desserts
 {
-@include Entrées-Plats-Dessert;
-
-}
-
-
-.Entrée__box--container
-{
     display: flex;
-    justify-content: space-between;
-}
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0px 20px 0px;
+    margin-left: 10px;
+    margin-right: 10px;
 
-.Entrée__box--1, .Entrée__box--2, .Entrée__box--3, .Plat__box--1, .Plat__box--2, .Plat__box--3, .Dessert__box--1, .Dessert__box--2, .Dessert__box--3
-{
-    @include Entrée-Plat-Dessert__box;
-    animation: bottomslide 2s;
-   
-}
-
-.Entrée__box1, .Plat__box1, .Dessert__box1
-{
-    width: 75%;
+    @media(min-width: 768px){
+        margin-left: 10px;
+        margin-right: 10px;
+        flex-direction: initial;
+    }
+    @media(min-width: 992px){
+    width: 100%;
     
 }
-
-
-.Entrée__box--1:hover .sous-nom, .Entrée__box--2:hover .sous-nom, .Entrée__box--3:hover .sous-nom, .Plat__box--1:hover .sous-nom, .Plat__box--2:hover .sous-nom, .Plat__box--3:hover .sous-nom, .Dessert__box--1:hover .sous-nom, .Dessert__box--2:hover .sous-nom, .Dessert__box--3:hover .sous-nom
-{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 
+.Menu-Box
+{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    /*border: solid 1px;*/
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #E8E8E8;;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    animation: bottomslide 2s;
 
+    &:hover .sous-nom{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
+    &:hover .AjoutPanier{
+        animation: leftslide 3s;
+        @media (min-width: 768px){
+            height: 130px;
+    
+        }
+    }
+   
+    @media (min-width: 768px){
+        height: 130px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.Box-NomETSous-nom
+{
+    width: 70%;
+    @media (min-width: 768px){
+        width: 50%;
+    }
+}
 
 .sous-nom
 {
@@ -453,7 +540,9 @@ text-align: center;
     padding-left: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
-    
+    @media (min-width: 768px){
+        white-space: initial;
+    }
 }
 
 
@@ -461,9 +550,13 @@ text-align: center;
 {
     padding-left: 10px;
     font-size: 15px;
+    @media (min-width: 768px){
+        white-space: initial;
+        padding-bottom: 5px;
+    }
 }
 
-.Entrée__box1-bis
+.Box-Prix
 {
     margin-top: 20px;
 }
@@ -473,6 +566,7 @@ text-align: center;
     font-size: 15px;
     font-weight: 500;
 }
+
 @keyframes bottomslide
 { 
 from {
@@ -488,15 +582,17 @@ to {
 
 .AjoutPanier
 {
-    @include AjoutPanier;
+    background: #99E2D0;
+    width: 70px;
+    height: 60px;
+    border-radius: 0px 10px 10px 0px ;
+    border: solid 1px;
+    border-style: none;
     width: 0;
-}
 
-
-.Entrée__box--1:hover .AjoutPanier, .Entrée__box--2:hover .AjoutPanier, .Entrée__box--3:hover .AjoutPanier, .Plat__box--1:hover .AjoutPanier, .Plat__box--2:hover .AjoutPanier, .Plat__box--3:hover .AjoutPanier,  .Dessert__box--1:hover .AjoutPanier, .Dessert__box--2:hover .AjoutPanier, .Dessert__box--3:hover .AjoutPanier
-{
-    animation: leftslide 3s;
-    
+    @media (min-width: 768px){
+        height: 100px;
+    }
 }
 
 @keyframes leftslide
@@ -517,83 +613,8 @@ to {
 }
 }
 
-
-
- .fa-circle-check
-{
-    @include AjoutPanier--Logo;
-    
-}
-
-.Entrée__box--1:hover .fa-circle-check, .Entrée__box--2:hover .fa-circle-check, .Entrée__box--3:hover .fa-circle-check, .Plat__box--1:hover .fa-circle-check, .Plat__box--2:hover .fa-circle-check, .Plat__box--3:hover .fa-circle-check,  .Dessert__box--1:hover .fa-circle-check, .Dessert__box--2:hover .fa-circle-check, .Dessert__box--3:hover .fa-circle-check
-{
-    animation: Rotation 2s;
-}
-
-@keyframes Rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-
-.ButtonCommander-container
-{
-@include ButtonCommander-container;
-}
-
-.ButtonCommander
-{
-    @include Button;
-    width: 40%;
-
-}
-
-.ButtonCommander:hover
-{
-    @include Button-hover;
-    cursor: grab;
-}
-
-/*Media Queries : Palette du gout*/
-
-@media only screen and (min-width: 768px) 
-{
-
-header i 
-{
-    font-size: 20px;
-}
-
-.TitredumenuetCoeur
-{
-    justify-content: center;
-}
-
-.TitredumenuetCoeur h1
-{
-    margin-right: 50px;
-}
-
-.Entrée__box--1,.Entrée__box--2, .Entrée__box--3, .Plat__box--1, .Plat__box--2, .Plat__box--3, .Dessert__box--1, .Dessert__box--2, .Dessert__box--3
-{
-height: 100px;
-}
-
-.Sous-titre-Entrées, .Sous-titres
-{
-    text-align: center;
-}
-
-.AjoutPanier
-{
-    height: 100px;
-}
-
-@keyframes leftslide
+@media (min-width: 768px){
+    @keyframes leftslide
 { 
 0% {
     transform: translatex(70px);
@@ -610,70 +631,74 @@ height: 100px;
     width: 0px;
 }
 }
+}
 
-.fa-circle-check
+
+ #Logo-AjoutPanier
 {
+    font-size: 20px;
+    color: white;
+    position: relative;
+    left: 25px;
+    top: 20px;
+    @media (min-width: 768px){
     left: 45px;
     top: 40px;
-    
+    }
 }
 
-footer 
+
+.Menu-Box:hover #Logo-AjoutPanier
 {
-margin-top: 60px;
-
+    animation: Rotation 2s;
 }
 
-.ButtonCommander-container
-{
-    margin-top: 40px;
-}
+@keyframes Rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
 
 .ButtonCommander
 {
-    height: 60px;
-}
+    @include Button;
+    width: 200px;
 
-footer
-{
-    text-align: center;
-    padding-top:10px;
-}
-
-}
-
-@media only screen and (min-width: 992px) 
-{
-
-    header i 
-    {
-        font-size: 30px;
+    &:hover{
+        opacity: 0.9;
+    cursor: grab;
     }
 
-.TitredumenuetCoeur h1
-{
- margin-right: 90px;
-}
+    &-container{
+        display: flex;
+        justify-content: center;
+    @media (min-width: 768px){
+    margin-top: 40px;
+    }}
+
+    @media (min-width: 768px){
+        height: 60px;
+        width: 250px;
+    }
+
     
-
-.Container-menu
-{
-flex-direction: initial;
-justify-content: space-around;
-align-items: flex-end;
-}
-
-.Entrées, .Plats, .Desserts
-{
-    width: 90%;
-}
-
-.Entrée__box1, .Plat__box1, .Dessert__box1
-{
-    width: 50%;
 }
 
 
-
+footer{
+    @media (min-width: 768px){
+        margin-top: 60px;
+        text-align: center;
+        padding-top:10px;
+    }
+    
 }
 
+/*Media Queries : Palette du gout*/
