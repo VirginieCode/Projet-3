@@ -228,9 +228,15 @@ color: #9356DC;
     @media (min-width: 768px) {
         padding-left: 20px;
         padding-right: 20px;
+        padding-bottom: 50px;
          }
-    
+
+         @media (min-width: 992px) {
+            
+            padding-bottom: 30px;
+             }
 }
+    
 
 
 
@@ -239,6 +245,7 @@ color: #9356DC;
     font-weight: 900;
     font-size: 20px;
     padding-left: 15px;
+    padding-bottom: 20px;
 }
 
 .Restaurants-container
@@ -248,10 +255,12 @@ color: #9356DC;
     align-items: center;
     gap: 10px;
     width: 100%;
+    padding-bottom: 20px;
     @media (min-width: 768px) {
         flex-direction: initial;
         justify-content: center;
        gap: 0;
+       
          }
 }
 
@@ -354,6 +363,7 @@ footer
 
     @media (min-width: 768px) {
         text-align: center;
+       
          }
 
 }
@@ -456,7 +466,7 @@ footer
 {
     font-weight: 100;
     margin-bottom: 15px;
-    margin-left: 40px;
+    margin-left: 15px;
 
     & span{
         border-bottom: 3px solid #99E2D0;
@@ -519,52 +529,70 @@ footer
     }
    
     @media (min-width: 768px){
-        height: 130px;
-        margin-left: 15px;
-        margin-right: 15px;
+        height: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
 .Box-NomETSous-nom
 {
-    width: 70%;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
     @media (min-width: 768px){
-        width: 50%;
+        width: 80%;
+        
     }
 }
 
+
 .sous-nom
 {
-    white-space: nowrap;
-    font-size: 13.5px;
+   
+    font-size: 16px;
     padding-left: 10px;
-    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
-    @media (min-width: 768px){
-        white-space: initial;
-    }
+    overflow: hidden;
 }
 
 
 .nom
 {
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 18px;
+    white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     @media (min-width: 768px){
-        white-space: initial;
+      
         padding-bottom: 5px;
+        
     }
 }
 
 .Box-Prix
 {
     margin-top: 20px;
+    width: 10%;
+    padding-right: 20px;
+    @media (min-width: 768px){
+      
+        margin-top: 70px;
+    }
 }
+
 
 .prix
 {
     font-size: 15px;
     font-weight: 500;
+    @media (min-width: 768px){
+      
+        font-size: 17px;
+    }
 }
 
 @keyframes bottomslide
@@ -598,7 +626,7 @@ to {
 @keyframes leftslide
 { 
 0% {
-    transform: translatex(70px);
+    transform: translatex(100px);
     width: 0px;
 }
 
@@ -608,7 +636,7 @@ to {
 }
 
 100% {
-    transform: translatex(70px);
+    transform: translatex(100px);
     width: 0px;
 }
 }
@@ -617,17 +645,17 @@ to {
     @keyframes leftslide
 { 
 0% {
-    transform: translatex(70px);
+    transform: translatex(100px);
     width: 0px;
 }
 
 50% {
     transform: translatex(0);
-    width: 110px;
+    width: 100px;
 }
 
 100% {
-    transform: translatex(70px);
+    transform: translatex(100px);
     width: 0px;
 }
 }
@@ -643,7 +671,7 @@ to {
     top: 20px;
     @media (min-width: 768px){
     left: 45px;
-    top: 40px;
+    top: 50px;
     }
 }
 
@@ -662,7 +690,12 @@ to {
     }
   }
 
+.ButtonCommander-container
 
+{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
 
 
@@ -692,13 +725,6 @@ to {
 }
 
 
-footer{
-    @media (min-width: 768px){
-        margin-top: 60px;
-        text-align: center;
-        padding-top:10px;
-    }
-    
-}
 
-/*Media Queries : Palette du gout*/
+
+

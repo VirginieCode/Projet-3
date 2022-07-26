@@ -315,6 +315,13 @@ header img {
   #Restaurants {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  #Restaurants {
+    padding-bottom: 30px;
   }
 }
 
@@ -322,6 +329,7 @@ header img {
   font-weight: 900;
   font-size: 20px;
   padding-left: 15px;
+  padding-bottom: 20px;
 }
 
 .Restaurants-container {
@@ -337,6 +345,7 @@ header img {
           align-items: center;
   gap: 10px;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 @media (min-width: 768px) {
@@ -561,7 +570,7 @@ footer h5 {
 .Sous-titres {
   font-weight: 100;
   margin-bottom: 15px;
-  margin-left: 40px;
+  margin-left: 15px;
 }
 
 .Sous-titres span {
@@ -649,55 +658,68 @@ footer h5 {
 
 @media (min-width: 768px) {
   .Menu-Box {
-    height: 130px;
-    margin-left: 15px;
-    margin-right: 15px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
 .Box-NomETSous-nom {
-  width: 70%;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
 }
 
 @media (min-width: 768px) {
   .Box-NomETSous-nom {
-    width: 50%;
+    width: 80%;
   }
 }
 
 .sous-nom {
-  white-space: nowrap;
-  font-size: 13.5px;
+  font-size: 16px;
   padding-left: 10px;
-  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-@media (min-width: 768px) {
-  .sous-nom {
-    white-space: initial;
-  }
+  overflow: hidden;
 }
 
 .nom {
   padding-left: 10px;
-  font-size: 15px;
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .nom {
-    white-space: initial;
     padding-bottom: 5px;
   }
 }
 
 .Box-Prix {
   margin-top: 20px;
+  width: 10%;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .Box-Prix {
+    margin-top: 70px;
+  }
 }
 
 .prix {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .prix {
+    font-size: 17px;
+  }
 }
 
 @-webkit-keyframes bottomslide {
@@ -744,8 +766,8 @@ footer h5 {
 
 @-webkit-keyframes leftslide {
   0% {
-    -webkit-transform: translatex(70px);
-            transform: translatex(70px);
+    -webkit-transform: translatex(100px);
+            transform: translatex(100px);
     width: 0px;
   }
   50% {
@@ -754,16 +776,16 @@ footer h5 {
     width: 70px;
   }
   100% {
-    -webkit-transform: translatex(70px);
-            transform: translatex(70px);
+    -webkit-transform: translatex(100px);
+            transform: translatex(100px);
     width: 0px;
   }
 }
 
 @keyframes leftslide {
   0% {
-    -webkit-transform: translatex(70px);
-            transform: translatex(70px);
+    -webkit-transform: translatex(100px);
+            transform: translatex(100px);
     width: 0px;
   }
   50% {
@@ -772,8 +794,8 @@ footer h5 {
     width: 70px;
   }
   100% {
-    -webkit-transform: translatex(70px);
-            transform: translatex(70px);
+    -webkit-transform: translatex(100px);
+            transform: translatex(100px);
     width: 0px;
   }
 }
@@ -781,35 +803,35 @@ footer h5 {
 @media (min-width: 768px) {
   @-webkit-keyframes leftslide {
     0% {
-      -webkit-transform: translatex(70px);
-              transform: translatex(70px);
+      -webkit-transform: translatex(100px);
+              transform: translatex(100px);
       width: 0px;
     }
     50% {
       -webkit-transform: translatex(0);
               transform: translatex(0);
-      width: 110px;
+      width: 100px;
     }
     100% {
-      -webkit-transform: translatex(70px);
-              transform: translatex(70px);
+      -webkit-transform: translatex(100px);
+              transform: translatex(100px);
       width: 0px;
     }
   }
   @keyframes leftslide {
     0% {
-      -webkit-transform: translatex(70px);
-              transform: translatex(70px);
+      -webkit-transform: translatex(100px);
+              transform: translatex(100px);
       width: 0px;
     }
     50% {
       -webkit-transform: translatex(0);
               transform: translatex(0);
-      width: 110px;
+      width: 100px;
     }
     100% {
-      -webkit-transform: translatex(70px);
-              transform: translatex(70px);
+      -webkit-transform: translatex(100px);
+              transform: translatex(100px);
       width: 0px;
     }
   }
@@ -826,7 +848,7 @@ footer h5 {
 @media (min-width: 768px) {
   #Logo-AjoutPanier {
     left: 45px;
-    top: 40px;
+    top: 50px;
   }
 }
 
@@ -844,6 +866,11 @@ footer h5 {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.ButtonCommander-container {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .ButtonCommander {
@@ -894,14 +921,4 @@ footer h5 {
     width: 250px;
   }
 }
-
-@media (min-width: 768px) {
-  footer {
-    margin-top: 60px;
-    text-align: center;
-    padding-top: 10px;
-  }
-}
-
-/*Media Queries : Palette du gout*/
 /*# sourceMappingURL=main.css.map */
