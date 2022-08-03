@@ -548,11 +548,15 @@ footer
     }
 
     &--2{
-        animation-delay: .25s;
+        animation-delay:.25s;
     }
 
     &--3{
         animation-delay: .5s;
+    }
+
+    &--4{
+        animation-delay: .75s;
     }
 }
 
