@@ -70,10 +70,6 @@
 {
     padding: 0;
     margin: 0;
-}
-
-p, h1
-{
     font-family: $font-roboto;
 }
 
@@ -81,17 +77,20 @@ header
 {
     @include Header;
 
-    & img{
-        width: 40%;
-        height: 65%;
-    }
     @media (min-width: 768px) {
         height: 80px;
-         }
+    }
 
-         @media (min-width: 992px) {
-            height: 100px;
+    & img{
+        width: 200px;
+
+        @media (min-width: 768px) {
+            width: 250px;
              }
+        
+    }
+
+    
 }
 
 #Localisation
@@ -202,6 +201,11 @@ align-items: center;
 position: relative;
 font-size: 14px;
 
+&:hover
+{
+    background-color: #f9e0f6;
+}
+
 @media (min-width: 768px) {
     margin-right: 10px;
      }
@@ -246,6 +250,9 @@ color: #9356DC;
     font-size: 20px;
     padding-left: 15px;
     padding-bottom: 20px;
+    @media (min-width: 992px) {
+            text-align: center;
+         }
 }
 
 .Restaurants-container
@@ -289,9 +296,11 @@ color: #9356DC;
     & i{
      position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 25px;
     font-size: 20px;
-
+    @media (min-width: 768px) {
+        bottom: 10px;
+         }
         &:hover
     {
         cursor: grab;
@@ -299,6 +308,7 @@ color: #9356DC;
     }
     @media (min-width: 768px) {
         margin-right: 10px;
+        
          }
 }
 
@@ -306,6 +316,7 @@ color: #9356DC;
 .nom
 {
     font-weight: 900;
+    padding-top: 10px;
 }
 
 .sous-nom
@@ -367,7 +378,6 @@ footer
          }
 
 }
-
 
 
 
@@ -521,10 +531,13 @@ footer
     }
 
     &:hover .AjoutPanier{
-        animation: leftslide 3s;
+      transform: translateX(0);
+      max-width: 70px;
+        min-width: 70px;
         @media (min-width: 768px){
             height: 130px;
-    
+            max-width: 100px;
+            min-width: 100px;
         }
     }
    
@@ -532,6 +545,14 @@ footer
         height: 100px;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    &--2{
+        animation-delay: .25s;
+    }
+
+    &--3{
+        animation-delay: .5s;
     }
 }
 
@@ -569,19 +590,16 @@ footer
     @media (min-width: 768px){
       
         padding-bottom: 5px;
-        
+        width: 100%;
     }
 }
 
 .Box-Prix
 {
-    margin-top: 20px;
+    margin-top: 35px;
     width: 10%;
-    padding-right: 20px;
-    @media (min-width: 768px){
-      
-        margin-top: 70px;
-    }
+    padding-right: 25px;
+  
 }
 
 
@@ -610,14 +628,18 @@ to {
 
 .AjoutPanier
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #99E2D0;
-    width: 70px;
+    max-width: 0;
+    min-width: 0;
     height: 60px;
     border-radius: 0px 10px 10px 0px ;
     border: solid 1px;
     border-style: none;
-    width: 0;
-
+   transform:translateX(100px);
+   transition:all .5s;
     @media (min-width: 768px){
         height: 100px;
     }
@@ -630,15 +652,11 @@ to {
     width: 0px;
 }
 
-50% {
+100% {
     transform: translatex(0);
     width: 70px;
 }
 
-100% {
-    transform: translatex(100px);
-    width: 0px;
-}
 }
 
 @media (min-width: 768px){
@@ -649,36 +667,39 @@ to {
     width: 0px;
 }
 
-50% {
+100% {
     transform: translatex(0);
     width: 100px;
 }
 
-100% {
-    transform: translatex(100px);
-    width: 0px;
-}
 }
 }
 
+
+@keyframes rightslide
+{ 
+0% {
+    transform: translatex(0);
+    width: 70px;
+}
+
+100% {
+    transform: translatex(100px);
+    width: 0;
+}
+
+}
 
  #Logo-AjoutPanier
 {
     font-size: 20px;
     color: white;
-    position: relative;
-    left: 25px;
-    top: 20px;
-    @media (min-width: 768px){
-    left: 45px;
-    top: 50px;
-    }
 }
 
 
 .Menu-Box:hover #Logo-AjoutPanier
 {
-    animation: Rotation 2s;
+    animation: Rotation 1s;
 }
 
 @keyframes Rotation {
@@ -724,7 +745,15 @@ to {
     
 }
 
+.fa-utensils
+{
+    padding-right: 5px;
+}
 
+.fa-handshake-angle
+{
+    padding-right: 5px;
+}
 
 
 
