@@ -399,7 +399,7 @@ header img {
 
 @media (min-width: 768px) {
   .Card i {
-    bottom: 10px;
+    bottom: 20px;
   }
 }
 
@@ -412,11 +412,6 @@ header img {
   .Card {
     margin-right: 10px;
   }
-}
-
-.nom {
-  font-weight: 900;
-  padding-top: 10px;
 }
 
 .sous-nom {
@@ -632,6 +627,7 @@ footer h5 {
 .Menu-Box {
   width: 100%;
   height: 60px;
+  opacity: 0;
   margin-bottom: 10px;
   /*border: solid 1px;*/
   border-radius: 10px;
@@ -648,8 +644,8 @@ footer h5 {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  -webkit-animation: bottomslide 2s;
-          animation: bottomslide 2s;
+  -webkit-animation: bottomslide 2s forwards;
+          animation: bottomslide 2s forwards;
 }
 
 .Menu-Box:hover .sous-nom {
@@ -675,7 +671,6 @@ footer h5 {
 
 @media (min-width: 768px) {
   .Menu-Box {
-    height: 100px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -689,6 +684,11 @@ footer h5 {
 .Menu-Box--3 {
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
+}
+
+.Menu-Box--4 {
+  -webkit-animation-delay: .75s;
+          animation-delay: .75s;
 }
 
 .Box-NomETSous-nom {
@@ -718,6 +718,7 @@ footer h5 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-weight: 900;
 }
 
 @media (min-width: 768px) {
@@ -728,7 +729,7 @@ footer h5 {
 }
 
 .Box-Prix {
-  margin-top: 35px;
+  margin-top: 25px;
   width: 10%;
   padding-right: 25px;
 }
@@ -791,12 +792,9 @@ footer h5 {
           transform: translateX(100px);
   -webkit-transition: all .5s;
   transition: all .5s;
-}
-
-@media (min-width: 768px) {
-  .AjoutPanier {
-    height: 100px;
-  }
+  /*@media (min-width: 768px){
+        height: 100px;
+    }*/
 }
 
 @-webkit-keyframes leftslide {
