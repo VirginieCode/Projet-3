@@ -876,12 +876,12 @@ footer h5 {
   }
 }
 
-#Logo-AjoutPanier {
+.fa-circle-check {
   font-size: 20px;
   color: white;
 }
 
-.Menu-Box:hover #Logo-AjoutPanier {
+.Menu-Box:hover .fa-circle-check {
   -webkit-animation: Rotation 1s;
           animation: Rotation 1s;
 }
